@@ -26,7 +26,6 @@ while confirm != True:
     if proceed == 1:
         confirm = True
 
-
 print("\nAnd so, {player_name} embarks on their journey in the terminal with just a {weapon} in hand...")
 print("Oh...and $100")
 
@@ -53,12 +52,12 @@ if choice == 1:
     print("To your surprise, the rock is sentient! It turns around and tells you it needs help!")
     print("Strange Rock : I need you to give me all of your money, or I will fight you.")
 
-    print("Option 1: Fight the rock. ")
-    print("\nOption 2. Give the rock all of your money.")
+    print("\nOption 1. Give the rock all of your money.")
+    print("Option 2: Fight the rock. ")
     choice = int(input("What will you do? "))
 
 if choice == 2:
-    print("You try to break the rock, but it dodges your move. ")
+    print("\nYou try to break the rock, but it dodges your move. ")
     print("The rock then morphs into a human-like figure, and takes a fighting stance.")
     rock_health = 30
 
@@ -68,3 +67,17 @@ if choice == 2:
             player_attack = 15
         else:
             player_attack = random.randint(10,30)
+
+        print("\nOption 1: Attack!")
+        print("Option 2. Defend!")
+        attack = int(input("Choose action: "))
+        if attack == 1:
+            rock_health -= player_attack
+            print(f"You have dealt {player_attack} damage to the enemy!")
+            health -= rock_attack
+            print(f"Enemy has dealt {rock_attack} damage to you!")
+        if attack == 2:
+            print(f"The rock tried to deal {rock_attack} damage and failed!")
+
+if health == 0:
+    print("You have been defeated. Game over!")
