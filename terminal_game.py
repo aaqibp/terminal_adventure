@@ -30,6 +30,8 @@ while confirm != True:
 
 print("\nAnd so, {player_name} embarks on their journey in the terminal with just a {weapon} in hand...")
 print("Oh...and $100")
+print("Goal - Try to finish with as much money and health as possible.")
+print("And of course, stay alive.")
 
 
 print("------------------------------------------------------------------------------------------------")
@@ -88,4 +90,35 @@ if health > 0 and choice == 2:
     print("\nYou have successfully defeated the strange rock!")
     money_gained = random.randint(10,30)
     print(f"You gained ${money_gained}!")
+    money += money_gained
     print(f"You have {health} hp and ${money} remaining...\n")
+
+if choice == 3:
+    print("You evaded the stone, which turned out to be a strange sentient creature.\n")
+
+print("You continue moving forward through the terminal domain. There is a door in front of you...")
+print("'Pay $50 to proceed.' reads the sign. \n")
+print("You have two options:")
+print("\nOption 1: Pay the cost and proceed.")
+print("Option 2: Look for an alternative method.\n")
+
+choice = int(input("Pick an option: "))
+while choice != 1 and choice != 2:
+    print("Invalid option, try again.")
+    choice = int(input("Pick an option: "))
+
+if choice == 1:
+    print(f"\nYou pay the cost. Now you have ${money-50} left.")
+    money -= 50
+elif choice == 2:
+    print("You look around you and see a window. You also see a being that looks like they should have been guarding the door, but they are asleep.")
+    print("\nOption 1: Break through the window.")
+    print("Option 2: Search the guard.")
+
+    choice = int(input("Pick an option: "))
+    while choice != 1 and choice != 2:
+        print("Invalid option, try again.")
+        choice = int(input("Pick an option: "))
+    
+
+
