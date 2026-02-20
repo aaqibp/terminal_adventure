@@ -120,5 +120,42 @@ elif choice == 2:
         print("Invalid option, try again.")
         choice = int(input("Pick an option: "))
     
+    if choice == 1:
+        print(f"You break through the window but hurt yourself in the process. You now have {health-50} health.")
+        print(f"$50 is also missing from your pocket...You have ${money-50} left.")
+    if choice == 2:
+        print("You search the guard for a key...\n")
+        print("Suddenly, the guard jolts awake, and pulls out a gun.")
+        guard_health = 80
+        while health > 0 and guard_health > 0:
+            guard_attack = random.randint(10,30)
+            if weapon == 1:
+                player_attack = 15
+            else:
+                player_attack = random.randint(10,30)
 
+            print("\nOption 1: Attack!")
+            print("Option 2. Dodge!")
+            attack = int(input("Choose action: "))
+            if attack == 1:
+                guard_health -= player_attack
+                print(f"You have dealt {player_attack} damage to the enemy!")
+                print(f"The guard has {guard_health} hp left.")
+                health -= guard_attack
+                print(f"Enemy has dealt {guard_attack} damage to you!")
+                print(f"You have {health} hp left.")
+            if attack == 2:
+                print(f"The guard tried to deal {guard_attack} damage and failed!")
+        if health <= 0:
+            print("You have been defeated. Game over!")
+        if health > 0 and choice == 2:
+            print("\nYou have successfully defeated the guard!")
+            money_gained = random.randint(10,30)
+            print(f"You gained ${money_gained}!")
+            money += money_gained
+            print(f"You have {health} hp and ${money} remaining...\n")
+    
+            
+
+    
 
