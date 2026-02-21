@@ -97,6 +97,9 @@ while health > 0 and game_in_progress == True:
 
     if choice == 3:
         print("You evaded the stone, which turned out to be a strange sentient creature.\n")
+        print("However, the creature did not appreciate the lack of acknowledgement, and launches a dagger at you.")
+        health -= 25
+        print(f"You lost 25 health. You now have {health} hp remaining.")
 
     print("You continue moving forward through the terminal domain. There is a door in front of you...")
     print("'Pay $50 to proceed.' reads the sign. \n")
